@@ -1,6 +1,6 @@
 # 🧾 Engineer Invoice Generator
 
-A React application designed as a POC to generate, view and save invoices for engineers. 
+A React application designed as a POC to generate, view and save invoices for engineers.
 
 The app allows users to search, view, edit, and delete invoices, making the invoicing process efficient and streamlined.
 
@@ -8,11 +8,13 @@ The app allows users to search, view, edit, and delete invoices, making the invo
 
 ## 🎮 Screenshots
 
-### Home Page  
-![Home Page](../resources/HomePAge.png)
+### Home Page
 
-### All Invoices Page  
-![All Invoices Page](../resources/InvoicePAge.png)
+![Home Page](./resources/HomePAge.png)
+
+### All Invoices Page
+
+![All Invoices Page](./resources/InvoicePAge.png)
 
 ---
 
@@ -26,11 +28,9 @@ The app allows users to search, view, edit, and delete invoices, making the invo
 
 ---
 
-## 🔗  Demo of POC
+## 🔗 Demo of POC
 
 Launch engineer invoice generator 👉
-   
-
 
 ---
 
@@ -48,13 +48,12 @@ Launch engineer invoice generator 👉
 ## 📅 Future Improvements
 
 - [ ] Add loading spinners and Chakra UI elements
-- [ ] Enable PDF invoice export  
-
+- [ ] Enable PDF invoice export
 
 ---
 
 ## 📖 API References
- 
+
 - [Airtable API](https://airtable.com/developers/web/api/introduction)
 
 ---
