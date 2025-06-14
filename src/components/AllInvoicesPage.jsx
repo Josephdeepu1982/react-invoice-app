@@ -39,29 +39,36 @@ const AllInvoicesPage = () => {
     }
   };
 
+  // When the input changes, update the editedAmounts state. The app keeps a temporary record of what the user is editing.
+  const handleAmountChange = (id, value) => {
+    setEditedAmounts({
+      ...editedAmounts,
+      [id]: value,
+    });
+  };
+
+  //when Save is clicked, save the new amt
   const handleAmountUpdate = async (id) => {
     const newAmount = editedAmounts[id];
+
     if (!newAmount) return;
 
     try {
       await updateInvoiceAmount(id, newAmount);
       alert("Amount updated!");
-      //refersh the list
+
+      //refersh the invoice list
       const updatedList = await fetchAllInvoices();
       setInvoices(updatedList);
-
-      setEditedAmounts((prev) => {
-        const updated = { ...prev };
-        delete updated[id];
-        return updated;
-      });
+      // Clear the edited amount from state
+      //After we edit something and clicked save, it updates Airtable.
+      // As we don't want the app to think it's still being edited, we remove that invoice's id from the editedAmounts object. This clears the edited value from temporary state.
+      const updatedEditedAmounts = { ...editedAmounts };
+      delete updatedEditedAmounts[id];
+      setEditedAmounts(updatedEditedAmounts);
     } catch (error) {
       alert("Failed to update amount");
     }
-  };
-
-  const handleAmountChange = (id, value) => {
-    setEditedAmounts((prev) => ({ ...prev, [id]: value }));
   };
 
   return (

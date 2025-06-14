@@ -54,7 +54,7 @@ const InvoiceTable = (props) => {
                 <td>
                   <input
                     type="text"
-                    placeholder="Reviewed and approved by?"
+                    placeholder="Pending Approval"
                     value={comments[engineer.name] || ""}
                     onChange={(event) => {
                       handleChange(engineer.name, event.target.value);
